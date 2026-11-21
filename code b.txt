@@ -1,0 +1,19 @@
+2. Detect suspicious IP address
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char ip[20];
+
+    printf("Enter IP Address: ");
+    scanf("%19s", ip);
+
+    if(strcmp(ip, "192.168.1.100") == 0) {
+        printf("ALERT: Suspicious IP Detected!\n");
+    } else {
+        printf("IP Address is Normal.\n");
+    }
+
+    return 0;
+}

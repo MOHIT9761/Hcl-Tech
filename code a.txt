@@ -1,0 +1,32 @@
+1. Detect repeated failed login attempts
+
+#include <stdio.h>
+
+int main() {
+    int attempts, i;
+    int failed = 0;
+
+    printf("Enter total login attempts: ");
+    scanf("%d", &attempts);
+
+    for(i = 1; i <= attempts; i++) {
+        int status;
+
+        printf("Login %d (1=Success, 0=Failed): ", i);
+        scanf("%d", &status);
+
+        if(status == 0) {
+            failed++;
+        }
+    }
+
+    printf("\nFailed Logins: %d\n", failed);
+
+    if(failed >= 5) {
+        printf("ALERT: Suspicious Login Activity!\n");
+    } else {
+        printf("Login Activity is Normal.\n");
+    }
+
+    return 0;
+}
